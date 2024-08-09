@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LongNight", "LongNight\LongNight.vcxproj", "{B13F0E73-0903-4656-A038-FE42C73D9C10}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CaffeVigil", "CaffeVigil\CaffeVigil.vcxproj", "{B13F0E73-0903-4656-A038-FE42C73D9C10}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
