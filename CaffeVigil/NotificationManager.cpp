@@ -12,13 +12,6 @@ using namespace Windows::ApplicationModel;
 using namespace Windows::UI::Notifications;
 using namespace Windows::Foundation::Collections;
 
-struct Win32AppInfo
-{
-	std::wstring Aumid;
-	std::wstring DisplayName;
-	std::wstring IconPath;
-};
-
 bool IsContainerized();
 bool HasIdentity();
 void SetRegistryKeyValue(HKEY hKey, std::wstring subKey, std::wstring valueName, std::wstring value);

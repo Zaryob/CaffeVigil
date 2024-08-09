@@ -26,7 +26,7 @@ void TrayIconManager::AddTrayIcon() {
     nid.uID = TRAY_ICON_UID;
     nid.uFlags = NIF_ICON | NIF_MESSAGE | NIF_TIP;
     nid.uCallbackMessage = WM_TRAYICON;
-    nid.hIcon = LoadIcon(nullptr, IDI_APPLICATION);
+    nid.hIcon = LoadIcon(GetModuleHandle(NULL), MAKEINTRESOURCE(IDI_SMALL));
     wcscpy_s(nid.szTip, sizeof(nid.szTip) / sizeof(nid.szTip[0]), L"Prevent Sleep");
 
     Shell_NotifyIcon(NIM_ADD, &nid);
@@ -90,5 +90,5 @@ void TrayIconManager::SetAwakeInterval(int minutes, int command) {
     }
 
     // Set a new timer to allow sleep after the interval
-    activeTimerID = SetTimer(hwnd, TRAY_ICON_UID, /*minutes * 60*/5 * 1000, nullptr);
+    activeTimerID = SetTimer(hwnd, TRAY_ICON_UID, minutes * 60 * 1000, nullptr);
 }

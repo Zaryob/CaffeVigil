@@ -55,7 +55,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
 	HACCEL hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_CAFFEVIGIL));
 
-	NotificationManager::Register(L"io.zaryob.CaffeVigil", szTitle, L"C:\\MyIcon.png");
+	NotificationManager::Register(L"io.zaryob.CaffeVigil", szTitle, L"IDI_CAFFEVIGIL");
 
 	NotificationManager::OnActivated([](NotificationActivatedEventArgsCompat e)
 		{
@@ -172,7 +172,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 	hInst = hInstance; // Store instance handle in our global variable
 
 	HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
-		CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
+		CW_USEDEFAULT, CW_USEDEFAULT, 400, 200, nullptr, nullptr, hInstance, nullptr);
 
 	if (!hWnd)
 	{
