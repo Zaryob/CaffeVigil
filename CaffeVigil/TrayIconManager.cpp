@@ -78,17 +78,19 @@ void TrayIconManager::SetAwakeInterval(int minutes, int command) {
     // Set the execution state to keep awake for the specified interval
     SetThreadExecutionState(ES_CONTINUOUS | ES_SYSTEM_REQUIRED | ES_DISPLAY_REQUIRED);
 
-   
-    if(command == SLP_FOREVER)
+
+    if (command == SLP_FOREVER) {
         CheckMenuItem(hMenu, SLP_FOREVER, MF_CHECKED);
-    else
+    }
+    else {
         CheckMenuItem(hTimeMenu, command, MF_CHECKED);
 
-    // Kill any existing timer
-    if (activeTimerID != 0 && minutes>0) {
-        KillTimer(hwnd, activeTimerID);
-    }
+        // Kill any existing timer
+        if (activeTimerID != 0 && minutes > 0) {
+            KillTimer(hwnd, activeTimerID);
+        }
 
-    // Set a new timer to allow sleep after the interval
-    activeTimerID = SetTimer(hwnd, TRAY_ICON_UID, minutes * 60 * 1000, nullptr);
+        // Set a new timer to allow sleep after the interval
+        activeTimerID = SetTimer(hwnd, TRAY_ICON_UID, minutes * 60 * 1000, nullptr);
+    }
 }

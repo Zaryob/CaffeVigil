@@ -16,6 +16,7 @@ public:
 	void ShowContextMenu();
 	void SetAwakeInterval(int minutes, int command);
 	void RemoveAwakeInterval();
+	uint32_t GetTimerId() { return activeTimerID; }
 
 private:
 	HINSTANCE hInst;
