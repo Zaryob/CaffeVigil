@@ -51,6 +51,7 @@ void TrayIconManager::AddTrayIcon() {
 }
 
 void TrayIconManager::RemoveTrayIcon() {
+    RemoveAwakeInterval();
 	Shell_NotifyIcon(NIM_DELETE, &nid);
 }
 
